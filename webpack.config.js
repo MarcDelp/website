@@ -15,7 +15,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/
       },
@@ -58,6 +58,7 @@ module.exports = {
     compress: true,
     port: 3000,
     hot: true,
+    historyApiFallback: true,
     open: true
   }
 };
