@@ -1,14 +1,14 @@
-import React from 'react';
+import React from 'react'
 import {
   BrowserRouter,
   Route,
   Switch
-} from 'react-router-dom';
-import { ThemeProvider } from '@material-ui/core/styles';
+} from 'react-router-dom'
+import { ThemeProvider } from '@material-ui/core/styles'
 
-import Navbar from './Navbar';
+import Navbar from './Navbar'
 
-export default function App() {
+export default function App () {
   return (
     <BrowserRouter>
       <ThemeProvider>
