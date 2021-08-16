@@ -1,45 +1,40 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { useTheme } from '@material-ui/core/styles'
 
 import ColorPicker from './ColorPicker'
+import ThemeContext from '../ThemeHandler/context'
 
 export default function StyleCreator () {
+  const { dispatch } = useContext(ThemeContext)
   const theme = useTheme()
-  const [primaryColor, setPrimary] = useState(theme.palette.primary.main)
-  const [secondaryColor, setSecondary] = useState(theme.palette.secondary.main)
-  const [backgroundColor, setBackground] = useState(theme.palette.background.default)
+  const primaryColor = theme.palette.primary.main
+  const secondaryColor = theme.palette.secondary.main
+  const backgroundColor = theme.palette.background.default
 
-  const updatePrimary = (color) => {
-    const newColor = `#${color.hex}`
-    setPrimary(newColor)
-  }
-
-  const updateSecondary = (color) => {
-    const newColor = `#${color.hex}`
-    setSecondary(newColor)
-  }
-
-  const updateBackground = (color) => {
-    const newColor = `#${color.hex}`
-    setBackground(newColor)
-  }
+  const updateColor = (colorType, color) => dispatch({
+    type: `COLOR-${colorType}`,
+    color
+  })
 
   return (
     <>
       <ColorPicker
         label='Primary color'
         color={ primaryColor }
-        updateColor={ updatePrimary }
+        type='PRIMARY'
+        updateColor={ updateColor }
       />
       <ColorPicker
         label='Secondary color'
         color={ secondaryColor }
-        updateColor={ updateSecondary }
+        type='SECONDARY'
+        updateColor={ updateColor }
       />
       <ColorPicker
         label='Background color'
         color={ backgroundColor }
-        updateColor={ updateBackground }
+        type='BACKGROUND'
+        updateColor={ updateColor }
       />
     </>
   )
