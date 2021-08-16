@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar'
 import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
@@ -28,24 +28,30 @@ export default function Navbar () {
     <AppBar position='sticky'>
       <Toolbar>
         <div className={ classes.navbarContainer }>
-          <NavLink to='/'>
-            <IconButton className={classes.homeButton}>
-              <HomeIcon/>
-            </IconButton>
-          </NavLink>
+          <IconButton
+            className={ classes.homeButton }
+            component={ RouterLink }
+            to='/'
+          >
+            <HomeIcon/>
+          </IconButton>
 
           <div>
-            <NavLink to='/cv'>
-              <Button disableRipple>
-                Parcours
-              </Button>
-            </NavLink>
+            <Button
+              disableRipple
+              component={ RouterLink }
+              to='/cv'
+            >
+              Parcours
+            </Button>
 
-            <NavLink to='/privacy'>
-              <Button disableRipple>
-                Vie privée
-              </Button>
-            </NavLink>
+            <Button
+              disableRipple
+              component={ RouterLink }
+              to='/privacy'
+            >
+              Vie privée
+            </Button>
           </div>
 
           <Settings/>
