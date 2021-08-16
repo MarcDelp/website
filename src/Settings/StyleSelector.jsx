@@ -20,11 +20,13 @@ export default function StyleSelector () {
 
   return (
     <>
+      <h3>Gestion du thème</h3>
       <RadioGroup
         value={ style }
         onChange={ handleStyleChange }
       >
         <FormControlLabel
+          disabled
           value='light'
           control={<Radio/>}
           label='Thème clair'
