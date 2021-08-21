@@ -15,7 +15,7 @@ import Navbar from './Navbar'
 import NotFound from './NotFound'
 import Privacy from './Privacy'
 import ThemeContext from './ThemeHandler/context'
-import { updateColorTheme } from './ThemeHandler/reducer'
+import { updateTheme } from './ThemeHandler/reducer'
 import darkTheme from './ThemeHandler/themes/darkTheme'
 
 const useStyles = makeStyles((theme) => ({
@@ -28,10 +28,14 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export default function App () {
-  const [rawTheme, dispatchTheme] = useReducer(updateColorTheme, darkTheme)
-  const theme = createTheme(rawTheme)
-  const themeValue = {
-    dispatch: dispatchTheme
+  const [rawTheme, dispatchTheme] = useReducer(updateTheme, {
+    type: 'dark',
+    themeValues: darkTheme
+  })
+  const theme = createTheme(rawTheme.themeValues)
+  const themeInfo = {
+    dispatch: dispatchTheme,
+    type: rawTheme.type
   }
   const classes = useStyles()
 
@@ -40,7 +44,7 @@ export default function App () {
       <ThemeProvider theme={ theme }>
         <CssBaseline/>
 
-        <ThemeContext.Provider value={ themeValue }>
+        <ThemeContext.Provider value={ themeInfo }>
           <Navbar/>
         </ThemeContext.Provider>
 

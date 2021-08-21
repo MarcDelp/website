@@ -1,20 +1,25 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Radio from '@material-ui/core/Radio'
 import RadioGroup from '@material-ui/core/RadioGroup'
+import { useTheme } from '@material-ui/core/styles'
 
 import StyleCreator from './StyleCreator'
 import ThemeContext from '../ThemeHandler/context'
 
 export default function StyleSelector () {
-  const [style, setStyle] = useState('dark')
-  const { dispatch } = useContext(ThemeContext)
+  const { dispatch, type: themeType } = useContext(ThemeContext)
+  const theme = useTheme()
 
   const handleStyleChange = (event) => {
     const selectedTheme = event.target.value
-    setStyle(selectedTheme)
     if (selectedTheme !== 'custom') {
       dispatch({ type: `THEME-${selectedTheme.toUpperCase()}` })
+    } else {
+      dispatch({
+        type: 'COLORS',
+        colors: theme.palette
+      })
     }
   }
 
@@ -22,7 +27,7 @@ export default function StyleSelector () {
     <>
       <h3>Gestion du thème</h3>
       <RadioGroup
-        value={ style }
+        value={ themeType }
         onChange={ handleStyleChange }
       >
         <FormControlLabel
@@ -54,7 +59,7 @@ export default function StyleSelector () {
       </RadioGroup>
 
       {
-        style === 'custom' && <StyleCreator/>
+        themeType === 'custom' && <StyleCreator/>
       }
     </>
   )

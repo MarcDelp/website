@@ -2,34 +2,49 @@ import base from './themes/base'
 import darkTheme from './themes/darkTheme'
 import lightTheme from './themes/lightTheme'
 
-export const updateColorTheme = (state, action) => {
+export const updateTheme = (state, action) => {
   switch (action.type) {
     case 'COLORS':
       return {
-        palette: {
-          ...action.colors
+        type: 'custom',
+        themeValues: {
+          palette: {
+            ...action.colors
+          }
         }
       }
 
     case 'THEME-DARK':
-      return darkTheme
+      return {
+        type: 'dark',
+        themeValues: darkTheme
+      }
 
     case 'THEME-MATERIAL-DARK':
       return {
-        ...base,
-        palette: {
-          type: 'dark'
+        type: 'material-dark',
+        themeValues: {
+          ...base,
+          palette: {
+            type: 'dark'
+          }
         }
       }
 
     case 'THEME-LIGHT':
-      return lightTheme
+      return {
+        type: 'light',
+        themeValues: lightTheme
+      }
 
     case 'THEME-MATERIAL-LIGHT':
       return {
-        ...base,
-        palette: {
-          type: 'light'
+        type: 'material-light',
+        themeValues: {
+          ...base,
+          palette: {
+            type: 'light'
+          }
         }
       }
   }
