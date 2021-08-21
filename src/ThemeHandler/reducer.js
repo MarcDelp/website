@@ -8,6 +8,7 @@ export const updateTheme = (state, action) => {
       return {
         type: 'custom',
         themeValues: {
+          ...base,
           palette: {
             ...action.colors
           }
