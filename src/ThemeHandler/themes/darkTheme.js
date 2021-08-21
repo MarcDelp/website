@@ -2,6 +2,7 @@ import base from './base'
 
 const darkTheme = {
   palette: {
+    type: 'dark',
     primary: {
       main: '#00897b'
     },
@@ -12,7 +13,7 @@ const darkTheme = {
       default: '#303030'
     },
     text: {
-      main: '#fff'
+      primary: '#fff'
     }
   }
 }

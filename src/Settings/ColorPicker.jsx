@@ -17,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function ColorPicker ({ color, updateColor, label, type }) {
-  const updateColorWrapper = (color) => updateColor(type, `#${color.hex}`)
+export default function ColorPicker ({ color, updateTheme, label, type }) {
+  const updateThemeWrapper = (color) => updateTheme(type, `#${color.hex}`)
   const classes = useStyles()
 
   return (
@@ -30,7 +30,7 @@ export default function ColorPicker ({ color, updateColor, label, type }) {
           disableAlpha
           hideTextfield
           value={ color }
-          onChange={ updateColorWrapper }
+          onChange={ updateThemeWrapper }
         />
       </div>
     </div>
@@ -39,7 +39,7 @@ export default function ColorPicker ({ color, updateColor, label, type }) {
 
 ColorPicker.propTypes = {
   color: PropTypes.string,
-  updateColor: PropTypes.func,
+  updateTheme: PropTypes.func,
   label: PropTypes.string,
   type: PropTypes.string
 }
