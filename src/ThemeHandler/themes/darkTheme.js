@@ -1,4 +1,6 @@
-export default {
+import base from './base'
+
+const darkTheme = {
   palette: {
     primary: {
       main: '#00897b'
@@ -13,4 +15,9 @@ export default {
       main: '#fff'
     }
   }
+}
+
+export default {
+  ...base,
+  ...darkTheme
 }

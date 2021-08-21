@@ -28,27 +28,27 @@ export default function StyleSelector () {
         <FormControlLabel
           disabled
           value='light'
-          control={<Radio/>}
+          control={ <Radio/> }
           label='Thème clair'
         />
         <FormControlLabel
           value='dark'
-          control={<Radio/>}
+          control={ <Radio/> }
           label='Thème sombre'
         />
         <FormControlLabel
           value='material-light'
-          control={<Radio/>}
+          control={ <Radio/> }
           label='Thème clair Material-UI'
         />
         <FormControlLabel
           value='material-dark'
-          control={<Radio/>}
+          control={ <Radio/> }
           label='Thème sombre Material-UI'
         />
         <FormControlLabel
           value='custom'
-          control={<Radio/>}
+          control={ <Radio/> }
           label='Thème manuel'
         />
       </RadioGroup>

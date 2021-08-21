@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(3)
   }
 }))
+
 export default function ColorPicker ({ color, updateColor, label, type }) {
   const updateColorWrapper = (color) => updateColor(type, `#${color.hex}`)
   const classes = useStyles()
@@ -23,7 +24,7 @@ export default function ColorPicker ({ color, updateColor, label, type }) {
   return (
     <div className={ classes.colorPickerContainer }>
       <span className={ classes.label }>{ label }</span>
-      <div className={classes.colorPicker}>
+      <div className={ classes.colorPicker }>
         <MUIColorPicker
           deferred
           disableAlpha
