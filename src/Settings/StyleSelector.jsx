@@ -31,7 +31,6 @@ export default function StyleSelector () {
         onChange={ handleStyleChange }
       >
         <FormControlLabel
-          disabled
           value='light'
           control={ <Radio/> }
           label='Thème clair'

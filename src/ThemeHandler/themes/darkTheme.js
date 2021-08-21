@@ -4,16 +4,14 @@ const darkTheme = {
   palette: {
     type: 'dark',
     primary: {
-      main: '#00897b'
+      main: '#00796b'
     },
-    // secondary: {
-    //   main:
-    // },
+    secondary: {
+      main: '#1976d2'
+    },
     background: {
-      default: '#303030'
-    },
-    text: {
-      primary: '#fff'
+      default: '#252E39',
+      paper: '#444c56'
     }
   }
 }
