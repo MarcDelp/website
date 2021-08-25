@@ -1,21 +1,67 @@
 import React from 'react'
+import Link from '@material-ui/core/Link'
 
 export default function Home () {
+  const getRandomUrl = () => {
+    const chars = 'abcdefghijklmnopqrstuvwxyz'
+    const length = Math.ceil(Math.random() * 10) // number of chars in the url
+    let url = ''
+
+    for (let i = 0; i < length; i++) {
+      const upperCase = Math.random() >= 0.5
+      const char = chars[Math.round(Math.random() * 25)]
+      url += upperCase ? char.toUpperCase() : char
+    }
+
+    return url
+  }
+
   return (
     <div>
-      <h1>Welcome!</h1>
+      <h1>Bienvenue !</h1>
 
-      <h1>Ce site est encore en cours de construction</h1>
+      <p>Bienvenue sur mon site personnel.</p>
+      <p>Ici vous trouverez des informations sur mon cursus, sur des sujets qui me tiennent à coeur et sur d&apos;autres éléments que j&apos;aurais envie de partager.</p>
 
+      <h1>Ce site est encore en cours de construction.</h1>
+
+      <h2>Pourquoi un site personnel ?</h2>
+      <p>La raison pour laquelle j&apos;ai créé ce site est double :</p>
       <ul>
-        <li>Pourquoi ce site</li>
-        <li>Technologies utilisées</li>
-        <li>GitHub</li>
+        <li>Il me permet de renouer avec React et son écosystème, que je n&apos;avais plus pratiqué depuis un moment ;</li>
+        <li>Il me sert de vitrine pour des personnes qui souhaiteraient voir ce que je suis capable de produire.</li>
       </ul>
-      <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eamne rationem igitur sequere, qua tecum ipse et cum tuis utare, profiteri et in medium proferre non audeas? Omne enim animal, simul et ortum est, se ipsum et omnes partes suas diligit duasque, quae maximae sunt, in primis amplectitur, animum et corpus, deinde utriusque partes. Quae dici eadem de ceteris virtutibus possunt, quarum omnium fundamenta vos in voluptate tamquam in aqua ponitis. Sed si duo honesta proposita sint, alterum cum valitudine, alterum cum morbo, non esse dubium, ad utrum eorum natura nos ipsa deductura sit. Qui et definierunt plurima et definiendi artes reliquerunt, quodque est definitioni adiunctum, ut res in partes dividatur, id et fit ab illis et quem ad modum fieri oporteat traditur; Duo Reges: constructio interrete. Si movente, quod tamen dicitis, nulla turpis voluptas erit, quae praetermittenda sit, et simul non proficiscitur animal illud modo natum a summa voluptate, quae est a te posita in non dolendo. Sin autem ad animum, falsum est, quod negas animi ullum esse gaudium, quod non referatur ad corpus. Quae cum dixissem, magis ut illum provocarem quam ut ipse loquerer, tum Triarius leniter arridens: Tu quidem, inquit, totum Epicurum paene e philosophorum choro sustulisti. Teneamus enim illud necesse est, cum consequens aliquod falsum sit, illud, cuius id consequens sit, non posse esse verum. Perfecto enim et concluso neque virtutibus neque amicitiis usquam locum esse, si ad voluptatem omnia referantur, nihil praeterea est magnopere dicendum. Sed alii dolore moventur, alii cupiditate, iracundia etiam multi effetuntur et, cum in mala scientes inruunt, tum se optime sibi consulere arbitrantur. Haec videlicet est correctio philosophiae veteris et emendatio, quae omnino aditum habere nullum potest in urbem, in forum, in curiam. Quare, quotienscumque dicetur male quis de se mereri sibique esse inimicus atque hostis, vitam denique fugere, intellegatur aliquam subesse eius modi causam, ut ex eo ipso intellegi possit sibi quemque esse carum. Hac videlicet ratione, quod ea, quae externa sunt, iis tuemur officiis, quae oriuntur a suo cuiusque genere virtutis. </span>
-      <span>Iam autem Callipho aut Diodorus quo modo poterunt tibi istud concedere, qui ad honestatem aliud adiungant, quod ex eodem genere non sit? Persecutus est Aristoteles animantium omnium ortus, victus, figuras, Theophrastus autem stirpium naturas omniumque fere rerum, quae e terra gignerentur, causas atque rationes; Huic Epicurus praecentet, si potest, cui e viperino morsu venae viscerum Veneno inbutae taetros cruciatus cient! Sic Epicurus: Philocteta, st! brevis dolor. Tuberonem de dolore patiendo scriberet, quod esse caput debebat, si probari posset, nusquam posuit, non esse malum dolorem, sed quid esset et quale, quantumque in eo inesset alieni, deinde quae ratio esset perferendi; In omni enim animante est summum aliquid atque optimum, ut in equis, in canibus, quibus tamen et dolore vacare opus est et valere; An, partus ancillae sitne in fructu habendus, disseretur inter principes civitatis, P. Iam ille sorites, quo nihil putatis esse vitiosius: quod bonum sit, id esse optabile, quod optabile, id expetendum, quod expetendum, id laudabile, deinde reliqui gradus. Sit voluptas non minor in nasturcio illo, quo vesci Persas esse solitos scribit Xenophon, quam in Syracusanis mensis, quae a Platone graviter vituperantur; Est enim perspicuum nullam artem ipsam in se versari, sed esse aliud artem ipsam, aliud quod propositum sit arti.</span>
-      <span>Miserum hominem! Si dolor summum malum est, dici aliter non potest. Ergo adhuc, quantum equidem intellego, causa non videtur fuisse mutandi nominis. Cum efficere non possit ut cuiquam, qui ipse sibi notus sit, hoc est qui suam naturam sensumque perspexerit, vacuitas doloris et voluptas idem esse videatur. Nam sunt et in animo praecipua quaedam et in corpore, quae cum leviter agnovit, tum discernere incipit, ut ea, quae prima data sunt natura, appetat asperneturque contraria. Nam me ipsum huc modo venientem convertebat ad sese Coloneus ille locus, cuius incola Sophocles ob oculos versabatur, quem scis quam admirer quemque eo delecter. Quam quidem certationem homo et acutus et diligens, Chrysippus, non contemnit totumque discrimen summi boni in earum comparatione positum putat. Illa autem, morbum, egestatem, dolorem, non appello m a l a, sed, si libet, r e i e c t a n e a. Nec enim absolvi beata vita sapientis neque ad exitum perduci poterit, si prima quaeque bene ab eo consulta atque facta ipsius oblivione obruentur. Me igitur ipsum ames oportet, non mea, si veri amici futuri sumus. Ad eas enim res referre, quae agas, quarum una, si quis malo careat, in summo eum bono dicat esse, altera versetur in levissima parte naturae, obscurantis est omnem splendorem honestatis, ne dicam inquinantis.</span>
-      <span>Quid, cum volumus nomina eorum, qui quid gesserint, nota nobis esse, parentes, patriam, multa praeterea minime necessaria? Itaque Epicurus semper hoc utitur, ut probet voluptatem natura expeti, quod ea voluptas, quae in motu sit, et parvos ad se alliciat et bestias, non illa stabilis, in qua tantum inest nihil dolere. Theophrastum tamen adhibeamus ad pleraque, dum modo plus in virtute teneamus, quam ille tenuit, firmitatis et roboris. Me quidem ad altiorem memoriam Oedipodis huc venientis et illo mollissimo carmine quaenam essent ipsa haec loca requirentis species quaedam commovit, inaniter scilicet, sed commovit tamen. Atque etiam valítudinem, vires, vacuitatem doloris non propter utilitatem solum, sed etiam ipsas propter se expetemus. An ea, quae per vinitorem antea consequebatur, per se ipsa curabit? Atqui si, ut convenire debet inter nos, est quaedam appetitio naturalis ea, quae secundum naturam sunt, appetens, eorum omnium est aliquae summa facienda. Atque ipsa hominis institutio si loqueretur, hoc diceret, primos suos quasi coeptus appetendi fuisse, ut se conservaret in ea natura, in qua ortus esset. Si ad prudentes, alterum fortasse dubitabunt, sitne tantum in virtute, ut ea praediti vel in Phalaridis tauro beati sint, alterum non dubitabunt, quin et Stoici conveniente sibi dicant et vos repugnantia. Quae quidem adhuc peregrinari Romae videbatur nec offerre sese nostris sermonibus, et ista maxime propter limatam quandam et rerum et verborum tenuitatem. Itaque ab iis constitutio illa prima naturae, a qua tu, quoque ordiebare, his prope verbis exponitur: Omnis natura vult esse conservatrix sui, ut et salva sit et in genere conservetur suo. Sed quamquam negant nec virtutes nec vitia crescere, tamen utrumque eorum fundi quodam modo et quasi dilatari putant.</span>
+      <p>De plus, par la suite, il pourrait me permettre de conduire rapidement des expérimentations sur des technologies que je souhaiterais découvrir.</p>
+
+      <h2>Sur ce site</h2>
+      <p>
+        Le code source de ce site est open source et disponible sur <Link
+          href='https://github.com/MarcDelp/website#readme'
+          target="_blank"
+          rel="noreferrer"
+        ><strong>GitHub</strong></Link>.
+      </p>
+      <p>
+        Le site est développé intégralement sur des technologies JavaScript. Pour le moment, dans cette première version, seul le front-end a été réalisé.
+        La partie back-end est laissée à la main de l&apos;hébergeur (ici les pages perso Orange) qui se contente de servir le contenu front-end que j&apos;ai créé.
+        Les librairies utilisées sont les suivantes :
+      </p>
+      <ul>
+        <li>React et d&apos;autres librairies de son écosystème (notamment React Router, Material-UI)</li>
+        <li>Webpack et webpack-dev-server</li>
+        <li>Babel</li>
+        <li>Eslint</li>
+      </ul>
+      <p>L&apos;objectif étant de garder le minimum de dépendances utiles, mais sans chercher à réinventer ce qui existe déjà pour autant.</p>
+      <p>
+        Un des inconvénients de ne pas gérer la partie serveur est qu&apos;il n&apos;est par conséquent pas possible d&apos;accéder au site par une autre route que celle de base.
+        Toute URL qui devrait rediriger soit vers une route existante (accessible via la navigation du site) soit inexistante (qui devrait donc rediriger vers une page 404) conduit
+        à une erreur 404 gérée par l&apos;hébergeur.
+        <br/>
+        Par conséquent, voici un <Link href={ getRandomUrl() }><strong>lien</strong></Link> généré aléatoirement permettant d&apos;afficher la page 404 du site.
+      </p>
+
+      <h2>Bonne visite !</h2>
     </div>
   )
 }
