@@ -8,12 +8,13 @@ import Container from '@material-ui/core/Container'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { createTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles'
 
-import Curriculum from './Curriculum'
+import Curriculum from './Content/Curriculum'
+import Home from './Content/Home'
+import NotFound from './Content/NotFound'
+import Privacy from './Content/Privacy'
+import Roadmap from './Content/Roadmap'
 import Footer from './Footer'
-import Home from './Home'
 import Navbar from './Navbar'
-import NotFound from './NotFound'
-import Privacy from './Privacy'
 import ThemeContext from './ThemeHandler/context'
 import { updateTheme } from './ThemeHandler/reducer'
 import darkTheme from './ThemeHandler/themes/darkTheme'
@@ -60,6 +61,10 @@ export default function App () {
 
             <Route path='/privacy'>
               <Privacy/>
+            </Route>
+
+            <Route path='/roadmap'>
+              <Roadmap/>
             </Route>
 
             <Route path='*'>

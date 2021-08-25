@@ -4,7 +4,7 @@ import Link from '@material-ui/core/Link'
 export default function Home () {
   const getRandomUrl = () => {
     const chars = 'abcdefghijklmnopqrstuvwxyz'
-    const length = Math.ceil(Math.random() * 10) // number of chars in the url
+    const length = Math.ceil(Math.random() * 6) + 4 // number of chars in the url
     let url = ''
 
     for (let i = 0; i < length; i++) {
@@ -59,6 +59,12 @@ export default function Home () {
         à une erreur 404 gérée par l&apos;hébergeur.
         <br/>
         Par conséquent, voici un <Link href={ getRandomUrl() }><strong>lien</strong></Link> généré aléatoirement permettant d&apos;afficher la page 404 du site.
+      </p>
+
+      <h2>Navigateurs supportés</h2>
+      <p>
+        Pour terminer cette présentation, notons que les navigateurs testés dans le cadre du développement de ce site sont Brave et Firefox. Comme Brave est basé sur Chromium, les
+        autres navigateurs de ce type (Chrome, Edge version Chromium, ...) devraient aussi bien fonctionner. En revanche, il n&apos;y a pas de support pour Internet Explorer.
       </p>
 
       <h2>Bonne visite !</h2>

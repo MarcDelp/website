@@ -52,6 +52,14 @@ export default function Navbar () {
             >
               Vie privée
             </Button>
+
+            <Button
+              disableRipple
+              component={ RouterLink }
+              to='/roadmap'
+            >
+              Roadmap
+            </Button>
           </div>
 
           <Settings/>
