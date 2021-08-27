@@ -33,6 +33,23 @@ export default function Navbar () {
     }
   }, [])
 
+  // Also add listener for resize event to switch between mobile & desktop navigation
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 600) {
+        setMobileNavigation(true)
+      } else {
+        setMobileNavigation(false)
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => { // on component unmount, remove resize listener
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   return (
     <AppBar position='sticky'>
       <Toolbar>
