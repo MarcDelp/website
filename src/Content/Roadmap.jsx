@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from '@material-ui/core/Link'
 
-export default function NotFound() {
+export default function Roadmap () {
   return (
     <div>
       <h1>Roadmap</h1>
@@ -9,6 +9,7 @@ export default function NotFound() {
       <p>Je n&apos;ai pas encore réalisé tout ce que je souhaite faire sur ce site. Voici les éléments que je souhaite apporter dans le futur :</p>
       <ul>
         <li>Mise en place de code splitting</li>
+        <li>Internationalisation des textes du site</li>
         <li>Ajout de test des composants React</li>
         <li>Ajout d&apos;un back-end Node.js</li>
         <li>Passage du back-end en HTTP2 avec la librairie spdy</li>
