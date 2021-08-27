@@ -67,6 +67,13 @@ export default function Home () {
         autres navigateurs de ce type (Chrome, Edge version Chromium, ...) devraient aussi bien fonctionner. En revanche, il n&apos;y a pas de support pour Internet Explorer.
       </p>
 
+      <h2>Une idée ? Un bug ?</h2>
+      <p>N&apos;hésitez pas à créer des issues dans le <Link
+        href='https://github.com/MarcDelp/website/issues'
+        target="_blank"
+        rel="noreferrer"
+      ><strong>répertoire GitHub</strong></Link> !</p>
+
       <h2>Bonne visite !</h2>
     </div>
   )

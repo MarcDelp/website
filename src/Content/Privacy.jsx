@@ -1,15 +1,68 @@
 import React from 'react'
+import Link from '@material-ui/core/Link'
 
 export default function Privacy () {
   return (
     <div>
-      <h1>Privacy</h1>
-      <ul>
-        <li>Avis sur la vie privée</li>
-        <li>Ce que j'utilise au quotidien (Brave, Qwant, /e/)</li>
-      </ul>
-      <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eamne rationem igitur sequere, qua tecum ipse et cum tuis utare, profiteri et in medium proferre non audeas? Omne enim animal, simul et ortum est, se ipsum et omnes partes suas diligit duasque, quae maximae sunt, in primis amplectitur, animum et corpus, deinde utriusque partes. Quae dici eadem de ceteris virtutibus possunt, quarum omnium fundamenta vos in voluptate tamquam in aqua ponitis. Sed si duo honesta proposita sint, alterum cum valitudine, alterum cum morbo, non esse dubium, ad utrum eorum natura nos ipsa deductura sit. Qui et definierunt plurima et definiendi artes reliquerunt, quodque est definitioni adiunctum, ut res in partes dividatur, id et fit ab illis et quem ad modum fieri oporteat traditur; Duo Reges: constructio interrete. Si movente, quod tamen dicitis, nulla turpis voluptas erit, quae praetermittenda sit, et simul non proficiscitur animal illud modo natum a summa voluptate, quae est a te posita in non dolendo. Sin autem ad animum, falsum est, quod negas animi ullum esse gaudium, quod non referatur ad corpus. Quae cum dixissem, magis ut illum provocarem quam ut ipse loquerer, tum Triarius leniter arridens: Tu quidem, inquit, totum Epicurum paene e philosophorum choro sustulisti. Teneamus enim illud necesse est, cum consequens aliquod falsum sit, illud, cuius id consequens sit, non posse esse verum. Perfecto enim et concluso neque virtutibus neque amicitiis usquam locum esse, si ad voluptatem omnia referantur, nihil praeterea est magnopere dicendum. Sed alii dolore moventur, alii cupiditate, iracundia etiam multi effetuntur et, cum in mala scientes inruunt, tum se optime sibi consulere arbitrantur. Haec videlicet est correctio philosophiae veteris et emendatio, quae omnino aditum habere nullum potest in urbem, in forum, in curiam. Quare, quotienscumque dicetur male quis de se mereri sibique esse inimicus atque hostis, vitam denique fugere, intellegatur aliquam subesse eius modi causam, ut ex eo ipso intellegi possit sibi quemque esse carum. Hac videlicet ratione, quod ea, quae externa sunt, iis tuemur officiis, quae oriuntur a suo cuiusque genere virtutis. </span>
-      <span>Iam autem Callipho aut Diodorus quo modo poterunt tibi istud concedere, qui ad honestatem aliud adiungant, quod ex eodem genere non sit? Persecutus est Aristoteles animantium omnium ortus, victus, figuras, Theophrastus autem stirpium naturas omniumque fere rerum, quae e terra gignerentur, causas atque rationes; Huic Epicurus praecentet, si potest, cui e viperino morsu venae viscerum Veneno inbutae taetros cruciatus cient! Sic Epicurus: Philocteta, st! brevis dolor. Tuberonem de dolore patiendo scriberet, quod esse caput debebat, si probari posset, nusquam posuit, non esse malum dolorem, sed quid esset et quale, quantumque in eo inesset alieni, deinde quae ratio esset perferendi; In omni enim animante est summum aliquid atque optimum, ut in equis, in canibus, quibus tamen et dolore vacare opus est et valere; An, partus ancillae sitne in fructu habendus, disseretur inter principes civitatis, P. Iam ille sorites, quo nihil putatis esse vitiosius: quod bonum sit, id esse optabile, quod optabile, id expetendum, quod expetendum, id laudabile, deinde reliqui gradus. Sit voluptas non minor in nasturcio illo, quo vesci Persas esse solitos scribit Xenophon, quam in Syracusanis mensis, quae a Platone graviter vituperantur; Est enim perspicuum nullam artem ipsam in se versari, sed esse aliud artem ipsam, aliud quod propositum sit arti.</span>
+      <h1>Vie privée</h1>
+
+      <p>
+        Le sujet de la vie privée sur internet m&apos;est important. Les positions de super-puissances qu&apos;occupent les GAFA dans le paysage d&apos;internet mettent à mal la
+        vie privée de la majorité des personnes, sans que celles-ci s&apos;en rendent compte dans la majeure partie des cas.
+      </p>
+      <p>
+        Collecte permanente de données, accords implicites dès lors qu&apos;on navigue sur un site ou utilise un service, publicité ciblée... sont autant d&apos;intrusions dans
+        la vie privée des gens. Mais le problème ne s&apos;arrête pas aux frontières d&apos;internet. Avec la démocratisation des smartphones dans un environnement où seuls existent
+        deux systèmes d&apos;exploitation grand public pour mobile (Android &amp; iOS, proposés par Google &amp; Apple respectivement) peu contrôlés sur les récoltes de données, les
+        applications mobiles ont aussi trouvé un terrain fertile pour collecter les informations de leur choix directement à la source. Ces applications peuvent ainsi agir à une
+        échelle plus grande encore que les sites sur internet, car elles accèdent directement aux données du téléphone. Vous avez peut-être déjà vécu l&apos;expérience de recevoir
+        par SMS un code pour valider une authentification et de ne pas avoir à recopier le code car celui-ci a été automatiquement lu par l&apos;application sur laquelle vous
+        cherchiez à vous connecter.
+      </p>
+
+      <h2>Quelles alternatives ?</h2>
+      <h3>Sur internet</h3>
+      <p>
+        Une multitude de choix existent pour réduire les intrusions dans la vie privée sur internet. Pour ma part, j&apos;ai choisi de remplacer mon navigateur ainsi que mon moteur
+        de recherche.
+      </p>
+      <p>
+        En ce qui concerne le navigateur, je me suis orienté vers <Link
+          href='https://brave.com/fr/'
+          target='_blank'
+          rel='noreferre'
+        ><strong>Brave</strong></Link>. Construit sur Chromium, la même base que Google Chrome, Brave propose une interface très ressemblante à celui-ci et s&apos;assure une
+        compatibilité avec les applications du Chrome Web Store. Ses avantages viennent notamment de son bloqueur de publicités intégré, des redirections automatiques en HTTPS et de
+        ses &quot;boucliers&quot; qui permettent de paramétrer ce que le navigateur doit autoriser ou bloquer, comme par exemple les cookies ou même les scripts JavaScript.
+      </p>
+      <p>
+        Pour ce qui est du moteur de recherche, j&apos;ai préféré <Link
+          href='https://www.qwant.com/'
+          target='_blank'
+          rel='noreferrer'
+        ><strong>Qwant</strong></Link> à Google. Je reconnais volontier que les résultats retournés par le premier sont un peu moins pertinents que ceux du second. Néanmoins, ils
+        me suffisent la majorité du temps. Les rares fois où je fais encore appel à Google sont dans des cas orientés développement informatique sur des points technologiques
+        précis, quand la recherche est trop précise pour Qwant.
+      </p>
+
+      <h3>Sur smartphones</h3>
+      <p>
+        En ce qui concerne les mobiles, il est vrai que les nouvelles versions d&apos;Android et d&apos;iOS se veulent, en apparence, plus respectueuses de la vie privée ou
+        <em> a minima</em> mieux paramétrables sur ces points, je préfère pour ma part me tourner vers un écosystème pensé entièrement dans ce sens-là. J&apos;utilise donc un
+        téléphone basé sur le système d&apos;exploitation <Link
+          href='https://e.foundation/'
+          target='_blank'
+          rel='noreferrer'
+        ><strong>/e/OS</strong></Link>.
+      </p>
+      <p>
+        Outre un système d&apos;exploitation qui se veut protecteur de la vie privée, avec une notation sur le respect de la vie privée des applications qui sont installables,
+        l&apos;écosystème se compose aussi d&apos;une adresse mail et d&apos;un cloud (basés sur la solution <Link
+          href='https://nextcloud.com/'
+          target='_blank'
+          rel='noreferrer'
+        ><strong>NextCloud</strong></Link>), qui remplacent efficacement les produits similaires proposés par Google.
+      </p>
     </div>
   )
 }
