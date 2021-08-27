@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar'
-import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import Toolbar from '@material-ui/core/Toolbar'
 import HomeIcon from '@material-ui/icons/Home'
 import { makeStyles } from '@material-ui/core/styles'
 
-import Settings from './Settings/Settings'
+import DesktopNavigation from './DesktopNavigation'
+import MobileNavigation from './MobileNavigation'
+import Settings from '../Settings/Settings'
 
 const useStyles = makeStyles((theme) => ({
   navbarContainer: {
@@ -22,7 +23,15 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export default function Navbar () {
+  const [useMobileNavigation, setMobileNavigation] = useState(false)
   const classes = useStyles()
+
+  // On component mount, decide if navigation should be displayed in desktop or mobile mode
+  useEffect(() => {
+    if (window.innerWidth < 600) {
+      setMobileNavigation(true)
+    }
+  }, [])
 
   return (
     <AppBar position='sticky'>
@@ -36,31 +45,11 @@ export default function Navbar () {
             <HomeIcon/>
           </IconButton>
 
-          <div>
-            <Button
-              disableRipple
-              component={ RouterLink }
-              to='/cv'
-            >
-              Parcours
-            </Button>
-
-            <Button
-              disableRipple
-              component={ RouterLink }
-              to='/privacy'
-            >
-              Vie privée
-            </Button>
-
-            <Button
-              disableRipple
-              component={ RouterLink }
-              to='/roadmap'
-            >
-              Roadmap
-            </Button>
-          </div>
+          {
+            useMobileNavigation
+              ? <MobileNavigation/>
+              : <DesktopNavigation/>
+          }
 
           <Settings/>
         </div>
