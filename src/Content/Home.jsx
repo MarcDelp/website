@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link as RouterLink } from 'react-router-dom'
 import Link from '@material-ui/core/Link'
 
 export default function Home () {
@@ -59,7 +60,8 @@ export default function Home () {
         <br/>
         Par conséquent, voici un <Link
           color='secondary'
-          href={ getRandomUrl() }
+          component={ RouterLink }
+          to={ getRandomUrl() }
         ><strong>lien</strong></Link> généré aléatoirement permettant d&apos;afficher la page 404 du site.
       </p>
 
