@@ -28,6 +28,7 @@ export default function Privacy () {
       </p>
       <p>
         En ce qui concerne le navigateur, je me suis orienté vers <Link
+          color='secondary'
           href='https://brave.com/fr/'
           target='_blank'
           rel='noreferre'
@@ -37,6 +38,7 @@ export default function Privacy () {
       </p>
       <p>
         Pour ce qui est du moteur de recherche, j&apos;ai préféré <Link
+          color='secondary'
           href='https://www.qwant.com/'
           target='_blank'
           rel='noreferrer'
@@ -50,6 +52,7 @@ export default function Privacy () {
         En ce qui concerne les mobiles, il est vrai que les nouvelles versions d&apos;Android et d&apos;iOS se veulent, en apparence, plus respectueuses de la vie privée ou
         <em> a minima</em> mieux paramétrables sur ces points, je préfère pour ma part me tourner vers un écosystème pensé entièrement dans ce sens-là. J&apos;utilise donc un
         téléphone basé sur le système d&apos;exploitation <Link
+          color='secondary'
           href='https://e.foundation/'
           target='_blank'
           rel='noreferrer'
@@ -58,6 +61,7 @@ export default function Privacy () {
       <p>
         Outre un système d&apos;exploitation qui se veut protecteur de la vie privée, avec une notation sur le respect de la vie privée des applications qui sont installables,
         l&apos;écosystème se compose aussi d&apos;une adresse mail et d&apos;un cloud (basés sur la solution <Link
+          color='secondary'
           href='https://nextcloud.com/'
           target='_blank'
           rel='noreferrer'

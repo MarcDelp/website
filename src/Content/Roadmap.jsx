@@ -10,11 +10,13 @@ export default function Roadmap () {
       <ul>
         <li>Mise en place de code splitting</li>
         <li>Internationalisation des textes du site</li>
+        <li>Ajout d&apos;annotations pour malvoyants</li>
         <li>Ajout de test des composants React</li>
         <li>Ajout d&apos;un back-end Node.js</li>
         <li>Passage du back-end en HTTP2 avec la librairie spdy</li>
         <li>Potentielle refonte front-end/back-end pour faire un site en javascript universel</li>
         <li>Ajout d&apos;un background animé, basé sur WebGL et configurable dans les paramètres du site, dans la même veine que ce <Link
+          color='secondary'
           href="https://codepen.io/MarcDelpech/pen/powvQzM"
           target="_blank"
           rel="noreferrer"

@@ -23,8 +23,6 @@ export default function Home () {
       <p>Bienvenue sur mon site personnel.</p>
       <p>Ici vous trouverez des informations sur mon cursus, sur des sujets qui me tiennent à coeur et sur d&apos;autres éléments que j&apos;aurais envie de partager.</p>
 
-      <h1>Ce site est encore en cours de construction.</h1>
-
       <h2>Pourquoi un site personnel ?</h2>
       <p>La raison pour laquelle j&apos;ai créé ce site est double :</p>
       <ul>
@@ -36,6 +34,7 @@ export default function Home () {
       <h2>Sur ce site</h2>
       <p>
         Le code source de ce site est open source et disponible sur <Link
+          color='secondary'
           href='https://github.com/MarcDelp/website#readme'
           target="_blank"
           rel="noreferrer"
@@ -58,7 +57,10 @@ export default function Home () {
         Toute URL qui devrait rediriger soit vers une route existante (accessible via la navigation du site) soit inexistante (qui devrait donc rediriger vers une page 404) conduit
         à une erreur 404 gérée par l&apos;hébergeur.
         <br/>
-        Par conséquent, voici un <Link href={ getRandomUrl() }><strong>lien</strong></Link> généré aléatoirement permettant d&apos;afficher la page 404 du site.
+        Par conséquent, voici un <Link
+          color='secondary'
+          href={ getRandomUrl() }
+        ><strong>lien</strong></Link> généré aléatoirement permettant d&apos;afficher la page 404 du site.
       </p>
 
       <h2>Navigateurs supportés</h2>
@@ -69,6 +71,7 @@ export default function Home () {
 
       <h2>Une idée ? Un bug ?</h2>
       <p>N&apos;hésitez pas à créer des issues dans le <Link
+        color='secondary'
         href='https://github.com/MarcDelp/website/issues'
         target="_blank"
         rel="noreferrer"

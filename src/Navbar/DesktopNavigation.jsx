@@ -7,7 +7,7 @@ export default function DesktopNavigation () {
     <div>
       <Button
         disableRipple
-        component={RouterLink}
+        component={ RouterLink }
         to='/cv'
       >
         Parcours
@@ -15,7 +15,7 @@ export default function DesktopNavigation () {
 
       <Button
         disableRipple
-        component={RouterLink}
+        component={ RouterLink }
         to='/privacy'
       >
         Vie privée
@@ -23,7 +23,7 @@ export default function DesktopNavigation () {
 
       <Button
         disableRipple
-        component={RouterLink}
+        component={ RouterLink }
         to='/roadmap'
       >
         Roadmap
