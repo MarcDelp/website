@@ -8,7 +8,9 @@ export const updateTheme = (state, action) => {
       return {
         type: 'custom',
         themeValues: {
-          ...base,
+          overrides: {
+            ...base
+          },
           palette: {
             ...action.colors
           }
@@ -18,14 +20,21 @@ export const updateTheme = (state, action) => {
     case 'THEME-DARK':
       return {
         type: 'dark',
-        themeValues: darkTheme
+        themeValues: {
+          overrides: {
+            ...base
+          },
+          ...darkTheme
+        }
       }
 
     case 'THEME-MATERIAL-DARK':
       return {
         type: 'material-dark',
         themeValues: {
-          ...base,
+          overrides: {
+            ...base
+          },
           palette: {
             type: 'dark'
           }
@@ -35,14 +44,21 @@ export const updateTheme = (state, action) => {
     case 'THEME-LIGHT':
       return {
         type: 'light',
-        themeValues: lightTheme
+        themeValues: {
+          overrides: {
+            ...base
+          },
+          ...lightTheme
+        }
       }
 
     case 'THEME-MATERIAL-LIGHT':
       return {
         type: 'material-light',
         themeValues: {
-          ...base,
+          overrides: {
+            ...base
+          },
           palette: {
             type: 'light'
           }

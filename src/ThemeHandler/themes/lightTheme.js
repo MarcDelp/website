@@ -1,6 +1,4 @@
-import base from './base'
-
-const lightTheme = {
+export default {
   palette: {
     type: 'light',
     primary: {
@@ -10,9 +8,4 @@ const lightTheme = {
       main: '#63a4ff'
     }
   }
-}
-
-export default {
-  ...base,
-  ...lightTheme
 }

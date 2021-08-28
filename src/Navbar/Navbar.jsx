@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar'
 import IconButton from '@material-ui/core/IconButton'
@@ -8,6 +8,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 import DesktopNavigation from './DesktopNavigation'
 import MobileNavigation from './MobileNavigation'
+import MobileContext from '../MobileHandler/context'
 import Settings from '../Settings/Settings'
 
 const useStyles = makeStyles((theme) => ({
@@ -23,32 +24,8 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export default function Navbar () {
-  const [useMobileNavigation, setMobileNavigation] = useState(false)
+  const mobileDisplay = useContext(MobileContext)
   const classes = useStyles()
-
-  // On component mount, decide if navigation should be displayed in desktop or mobile mode
-  useEffect(() => {
-    if (window.innerWidth < 600) {
-      setMobileNavigation(true)
-    }
-  }, [])
-
-  // Also add listener for resize event to switch between mobile & desktop navigation
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 600) {
-        setMobileNavigation(true)
-      } else {
-        setMobileNavigation(false)
-      }
-    }
-
-    window.addEventListener('resize', handleResize)
-
-    return () => { // on component unmount, remove resize listener
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
 
   return (
     <AppBar position='sticky'>
@@ -63,7 +40,7 @@ export default function Navbar () {
           </IconButton>
 
           {
-            useMobileNavigation
+            mobileDisplay
               ? <MobileNavigation/>
               : <DesktopNavigation/>
           }

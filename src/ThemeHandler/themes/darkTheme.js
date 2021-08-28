@@ -1,6 +1,4 @@
-import base from './base'
-
-const darkTheme = {
+export default {
   palette: {
     type: 'dark',
     primary: {
@@ -14,9 +12,4 @@ const darkTheme = {
       paper: '#444c56'
     }
   }
-}
-
-export default {
-  ...base,
-  ...darkTheme
 }
