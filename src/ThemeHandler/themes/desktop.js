@@ -3,6 +3,11 @@
  * the base theme if the navigation is set in desktop mode
  */
 export default {
+  MuiTimelineContent: {
+    root: {
+      'min-width': null
+    }
+  },
   MuiTimelineOppositeContent: {
     root: {
       'max-width': '20%'

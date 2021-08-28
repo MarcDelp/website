@@ -18,18 +18,20 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function TimelineEntry ({ addConnector = true, entry, isLastEntry = false }) {
+export default function TimelineEntry ({ addConnector = true, entry, isLastEntry = false, oppositeContent = true }) {
   const classes = useStyles()
 
   return (
     <TimelineItem>
-      <TimelineOppositeContent>
-        <Paper className={ classes.paper }>
-          <h4 className={ classes.noMargin }>{ entry.company }</h4>
-          <hr />
-          <h6 className={ classes.noMargin }>{ entry.time }</h6>
-        </Paper>
-      </TimelineOppositeContent>
+      {
+        oppositeContent && <TimelineOppositeContent>
+          <Paper className={ classes.paper }>
+            <h4 className={ classes.noMargin }>{ entry.company }</h4>
+            <hr />
+            <h6 className={ classes.noMargin }>{ entry.time }</h6>
+          </Paper>
+        </TimelineOppositeContent>
+      }
       <TimelineSeparator>
         <TimelineDot
           color='secondary'
@@ -38,7 +40,15 @@ export default function TimelineEntry ({ addConnector = true, entry, isLastEntry
         { addConnector && <TimelineConnector /> }
       </TimelineSeparator>
       <TimelineContent>
-        <h4 className={ classes.noMargin }>{ entry.title }</h4>
+        {
+          !oppositeContent && <h4 className={ classes.noMargin }>
+            { entry.company } ({ entry.time })
+          </h4>
+        }
+        { !oppositeContent && <hr/> }
+        <h4 className={ classes.noMargin }>
+          { entry.title }
+        </h4>
         {
           entry.description.map((desc, idx) => (
             <p key={ idx }>{ desc }</p>
@@ -57,5 +67,6 @@ TimelineEntry.propTypes = {
     time: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired
   }).isRequired,
-  isLastEntry: PropTypes.bool
+  isLastEntry: PropTypes.bool,
+  oppositeContent: PropTypes.bool
 }

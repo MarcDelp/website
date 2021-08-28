@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Timeline from '@material-ui/lab/Timeline'
 
+import DisplayContext from '../../DisplayHandler/context'
 import TimelineEntry from './TimelineEntry'
 
 export default function Curriculum () {
+  const display = useContext(DisplayContext)
+
   const workEntries = [{
     company: 'Euro Information',
     description: [
@@ -75,6 +78,7 @@ export default function Curriculum () {
               addConnector={ idx !== workEntries.length - 1 }
               entry={ entry }
               isLastEntry={ idx === 0 }
+              oppositeContent={ display !== 'mobile' }
             />
           ))
         }
@@ -90,6 +94,7 @@ export default function Curriculum () {
               addConnector={idx !== studyEntries.length - 1 }
               entry={ entry }
               isLastEntry={ false }
+              oppositeContent={ display !== 'mobile' }
             />
           ))
         }
