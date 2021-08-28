@@ -6,7 +6,7 @@ Feel free to inspire yourself from what I have done. It's pretty simple, but I h
 # Install and run
 To install the project you must have Node.js installed. I am using version 16.5.0 with npm 7.19.1. Clone the repo and then run:
 ```
-$npm run install
+npm run install
 ```
 
 To run in developper mode:
