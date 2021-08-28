@@ -1,6 +1,6 @@
 /**
  * Default values to override
- * Will be complemented by either mobile or desktop values
+ * Will be complemented by either mobile, medium or desktop values
  */
 export default {
   MuiCssBaseline: {

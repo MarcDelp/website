@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 import DesktopNavigation from './DesktopNavigation'
 import MobileNavigation from './MobileNavigation'
-import MobileContext from '../MobileHandler/context'
+import DisplayContext from '../DisplayHandler/context'
 import Settings from '../Settings/Settings'
 
 const useStyles = makeStyles((theme) => ({
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export default function Navbar () {
-  const mobileDisplay = useContext(MobileContext)
+  const display = useContext(DisplayContext)
   const classes = useStyles()
 
   return (
@@ -40,7 +40,7 @@ export default function Navbar () {
           </IconButton>
 
           {
-            mobileDisplay
+            display === 'mobile'
               ? <MobileNavigation/>
               : <DesktopNavigation/>
           }

@@ -3,9 +3,9 @@
  * the base theme if the navigation is set in desktop mode
  */
 export default {
-  MuiTimelineContent: {
+  MuiTimelineOppositeContent: {
     root: {
-      'min-width': '85%'
+      'max-width': '20%'
     }
   }
 }
