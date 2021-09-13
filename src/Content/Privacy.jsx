@@ -42,7 +42,7 @@ export default function Privacy () {
           href='https://www.qwant.com/'
           target='_blank'
           rel='noreferrer'
-        ><strong>Qwant</strong></Link> à Google. Je reconnais volontier que les résultats retournés par le premier sont un peu moins pertinents que ceux du second. Néanmoins, ils
+        ><strong>Qwant</strong></Link> à Google. Je reconnais volontiers que les résultats retournés par le premier sont un peu moins pertinents que ceux du second. Néanmoins, ils
         me suffisent la majorité du temps. Les rares fois où je fais encore appel à Google sont dans des cas orientés développement informatique sur des points technologiques
         précis, quand la recherche est trop précise pour Qwant.
       </p>

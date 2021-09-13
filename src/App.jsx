@@ -34,7 +34,18 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export default function App () {
-  const [display, setDisplay] = useState('desktop')
+  // Decide which display should be used
+  const getDisplay = () => {
+    if (window.innerWidth < 600) {
+      return 'mobile'
+    } else if (window.innerWidth < 1000) {
+      return 'medium'
+    } else {
+      return 'desktop'
+    }
+  }
+
+  const [display, setDisplay] = useState(getDisplay())
   const [rawTheme, dispatchTheme] = useReducer(updateTheme, {
     type: 'dark',
     themeValues: {
@@ -64,27 +75,9 @@ export default function App () {
   }
   const classes = useStyles()
 
-  // On component mount, decide which display should be used
+  // Add listener for resize event to switch between display modes
   useEffect(() => {
-    if (window.innerWidth < 600) {
-      setDisplay('mobile')
-    } else if (window.innerWidth < 1000) {
-      setDisplay('medium')
-    }
-  }, [])
-
-  // Also add listener for resize event to switch between display modes
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 600) {
-        setDisplay('mobile')
-      } else if (window.innerWidth < 1000) {
-        setDisplay('medium')
-      } else {
-        setDisplay('desktop')
-      }
-    }
-
+    const handleResize = () => setDisplay(getDisplay())
     window.addEventListener('resize', handleResize)
 
     return () => { // on component unmount, remove resize listener
