@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useState } from 'react'
+import React, { Suspense, lazy, useEffect, useReducer, useState } from 'react'
 import {
   BrowserRouter,
   Route,
@@ -8,12 +8,8 @@ import Container from '@material-ui/core/Container'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { createTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles'
 
-import Curriculum from './Content/Curriculum/Curriculum'
-import Home from './Content/Home'
-import NotFound from './Content/NotFound'
-import Privacy from './Content/Privacy'
-import Roadmap from './Content/Roadmap'
 import Footer from './Footer'
+import FullPageLoader from './core/FullPageLoader'
 import DisplayContext from './DisplayHandler/context'
 import Navbar from './Navbar/Navbar'
 import ThemeContext from './ThemeHandler/context'
@@ -23,6 +19,12 @@ import darkTheme from './ThemeHandler/themes/darkTheme'
 import desktop from './ThemeHandler/themes/desktop'
 import medium from './ThemeHandler/themes/medium'
 import mobile from './ThemeHandler/themes/mobile'
+
+const Curriculum = lazy(() => import('./Content/Curriculum/Curriculum'))
+const Home = lazy(() => import('./Content/Home'))
+const NotFound = lazy(() => import('./Content/NotFound'))
+const Privacy = lazy(() => import('./Content/Privacy'))
+const Roadmap = lazy(() => import('./Content/Roadmap'))
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -96,27 +98,29 @@ export default function App () {
           </ThemeContext.Provider>
 
           <Container className={ classes.container }>
-            <Switch>
-              <Route exact path='/'>
-                <Home/>
-              </Route>
+            <Suspense fallback={ <FullPageLoader/> }>
+              <Switch>
+                <Route exact path='/'>
+                  <Home/>
+                </Route>
 
-              <Route path='/cv'>
-                <Curriculum/>
-              </Route>
+                <Route path='/cv'>
+                  <Curriculum/>
+                </Route>
 
-              <Route path='/privacy'>
-                <Privacy/>
-              </Route>
+                <Route path='/privacy'>
+                  <Privacy/>
+                </Route>
 
-              <Route path='/roadmap'>
-                <Roadmap/>
-              </Route>
+                <Route path='/roadmap'>
+                  <Roadmap/>
+                </Route>
 
-              <Route path='*'>
-                <NotFound/>
-              </Route>
-            </Switch>
+                <Route path='*'>
+                  <NotFound/>
+                </Route>
+              </Switch>
+            </Suspense>
 
             <Footer />
           </Container>

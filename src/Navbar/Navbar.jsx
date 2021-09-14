@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { Suspense, lazy, useContext } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar'
 import IconButton from '@material-ui/core/IconButton'
@@ -6,10 +6,11 @@ import Toolbar from '@material-ui/core/Toolbar'
 import HomeIcon from '@material-ui/icons/Home'
 import { makeStyles } from '@material-ui/core/styles'
 
-import DesktopNavigation from './DesktopNavigation'
-import MobileNavigation from './MobileNavigation'
 import DisplayContext from '../DisplayHandler/context'
 import Settings from '../Settings/Settings'
+
+const DesktopNavigation = lazy(() => import('./DesktopNavigation'))
+const MobileNavigation = lazy(() => import('./MobileNavigation'))
 
 const useStyles = makeStyles((theme) => ({
   navbarContainer: {
@@ -39,11 +40,13 @@ export default function Navbar () {
             <HomeIcon/>
           </IconButton>
 
-          {
-            display === 'mobile'
-              ? <MobileNavigation/>
-              : <DesktopNavigation/>
-          }
+          <Suspense fallback={ <></> }>
+            {
+              display === 'mobile'
+                ? <MobileNavigation/>
+                : <DesktopNavigation/>
+            }
+          </Suspense>
 
           <Settings/>
         </div>

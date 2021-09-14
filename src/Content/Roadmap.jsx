@@ -8,8 +8,9 @@ export default function Roadmap () {
 
       <p>Je n&apos;ai pas encore réalisé tout ce que je souhaite faire sur ce site. Voici les éléments que je souhaite apporter dans le futur :</p>
       <ul>
-        <li>Mise en place de code splitting</li>
         <li>Internationalisation des textes du site</li>
+        <li>Passage du site en TypeScript</li>
+        <li>Ajout d&apos;Error Boundaries</li>
         <li>Ajout d&apos;annotations pour malvoyants</li>
         <li>Ajout de test des composants React</li>
         <li>Ajout d&apos;un back-end Node.js</li>
